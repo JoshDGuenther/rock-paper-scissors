@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <h1>Rock Paper Scissors</h1>
+    <p>Open console pls 😊</p>
+</body>
+<script>
+    const choices = ['rock', 'paper', 'scissors'];
+
+    function getComputerChoice() {
+        return choices[Math.floor(Math.random() * choices.length)];
+    }
+
+    function playRound(playerSelection, computerSelection) {
+        if (playerSelection === computerSelection) {
+            return "It's a tie!";
+        } else if (
+            (playerSelection === 'rock' && computerSelection === 'scissors') ||
+            (playerSelection === 'paper' && computerSelection === 'rock') ||
+            (playerSelection === 'scissors' && computerSelection === 'paper')
+        ) {
+            return `You win! ${playerSelection} beats ${computerSelection}`;
+        } else {
+            return `You lose! ${computerSelection} beats ${playerSelection}`;
+        }
+    }
+
+    const playerSelection = prompt("Choose rock, paper, or scissors: ").toLowerCase();
+    const computerSelection = getComputerChoice();
+    console.log(`Player chose: ${playerSelection}`);
+    console.log(`Computer chose: ${computerSelection}`);
+
+    console.log(playRound(playerSelection, computerSelection));
+
+    console.log("Game over!");
+    console.log("Thanks for playing!");
+    console.log("Reload the page to play again.");
+
+</script>
+
+</html>
